@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0  auto;
+    padding-inline: 40px;
+    box-sizing: content-box;
+}
+
+
+.wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 20px;
+    justify-content: space-between;
+}
+.option-text{
+    font-size: 28px;
+    font-weight: 900;
+}
+
+
+.region-select{
+    border: none;
+    outline: none ;
+    padding: 10px 5px;
+    font-size: 22px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #222;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(158, 76, 143);
+    color: aliceblue;
+    
+}
+
+
+
+.region-box{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0px 0px 5px #222;
+    padding: 20px 40px;
+    border-radius: 10px;
+    gap: 20px;
+
+}
+
+.region-border-box::-webkit-scrollbar {
+    display: none;
+}
+
+.region-border-box{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 450px;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #222;
+    padding: 20px 40px;
+    gap: 20px;    
+}
+
+.border-items{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.border-items:last-child{
+    border: none;
+}
+
+
+
+.region-box h1{
+    font-size: 26px;
+    color: rgb(158, 76, 143);
+    font-weight: 700;
+}
+.region-box p{
+    font-size: 22px;
+    font-weight: 500;
+    color: dodgerblue;
+}
+.region-box p span{
+    font-size: 18px;
+    color: #222;
+}
+
+.region-border-box h3{
+    font-size: 24px;
+    color: rgb(158, 76, 143);
+    font-weight: 700;
+}
+.region-border-box p{
+    font-size: 20px;
+    font-weight: 500;
+    color: dodgerblue;
+}
+.region-border-box p span{
+    font-size: 16px;
+    color: #222;
+}
+
+.box-region-happyday{
+    width: 100%;
+}
+
+.region-input{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #222;
+    font-size: 22px;
+
+}
+
+.result{
+    box-shadow: 0px 0px 5px #222;
+    border-radius: 10px;
+    width: 100%;
+}
+.region-title{
+    font-size: 18px;
+    color: #222;
+}
+
+
+
