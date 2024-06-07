@@ -2,6 +2,8 @@ const $regionSelect = document.querySelector("#region-select");
 const $regionBox = document.querySelector("#info");
 const $regionBorderBox = document.querySelector("#region-border-box")
 const $regionForm = document.querySelector(".box-region-happyday")
+const $regionInput = document.querySelector("#region-input")
+const $result = document.querySelector("#result")
 
 const renderRegion = (data) => {
     const $regionsFragment = document.createDocumentFragment();
@@ -48,7 +50,36 @@ const renderRegionInfo = (data) => {
     }
 
 
-    $regionForm.addEventListener("submit" ,)
+    const holidayInfo = (e) => {
+        e.preventDefault()
+        
+        fetch(`https://date.nager.at/api/v3/PublicHolidays/${$regionInput.value}/${data.countryCode}`)
+            .then(res => res.json())
+            .then(data => {
+                $result.innerHTML = ""
+                if (data.length === 0) {
+                    $result.innerHTML = "<div class='holiday-info-alert'>No holiday</div>"
+                } else {
+                    data.forEach((item) => {
+                        console.log(item);
+                        $result.innerHTML +=`
+                            <div class="holiday-info-item">
+                                <h3>Holiday data: <span>${item.date}</span></h3>
+                                <p>Holiday place: <span>${item.localName}</span></p>
+                                <p>Holiday name: <span>${item.name}</span></p>
+                            </div>
+                        `
+                    })
+                }
+            })
+            .catch(err => {
+                console.error(err)
+                $result.innerHTML = "<div class='holiday-info-alert'>No holiday</div>"
+            })
+    }
+    
+
+    $regionForm.addEventListener("submit", holidayInfo)
 }
 
 const selectedRegion = (e) => {
