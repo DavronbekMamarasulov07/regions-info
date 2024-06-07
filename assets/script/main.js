@@ -6,6 +6,8 @@ const $regionInput = document.querySelector("#region-input")
 const $result = document.querySelector("#result")
 
 const renderRegion = (data) => {
+    $result.innerHTML = ""
+    $regionInput.value = ""
     const $regionsFragment = document.createDocumentFragment();
     data.forEach(item => {
         const $option = document.createElement("option")
@@ -26,6 +28,8 @@ const loadAllRegions = () => {
 loadAllRegions();
 
 const renderRegionInfo = (data) => {
+    $result.innerHTML = ""
+    $regionInput.value = ""
     $regionBox.innerHTML = `
         <h1>Region Name: <span>${data.commonName}</span></h1>
         <p>Official Name: <span>${data.officialName}</span></p>
@@ -57,9 +61,12 @@ const renderRegionInfo = (data) => {
             .then(res => res.json())
             .then(data => {
                 $result.innerHTML = ""
+                $regionInput.value = ""
+
                 if (data.length === 0) {
                     $result.innerHTML = "<div class='holiday-info-alert'>No holiday</div>"
                 } else {
+                    
                     data.forEach((item) => {
                         console.log(item);
                         $result.innerHTML +=`
